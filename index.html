@@ -1,0 +1,102 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta property="og:title" content="Push Calculator" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://github.com/" />
+    <meta property="og:description" content="A calculator for the famous card game called Push.
+    Made with heart by Jimi" />
+    <meta name="theme-color" content="#000000">
+
+    <title>Push Calculator</title>
+
+    <style>
+        [x-cloak] {
+            display: none
+        }
+        .centered {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  /* bring your own prefixes */
+  transform: translate(-50%, -50%);
+}
+    </style>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/2.3.0/alpine-ie11.js" integrity="sha512-6m6AtgVSg7JzStQBuIpqoVuGPVSAK5Sp/ti6ySu6AjRDa1pX8mIl1TwP9QmKXU+4Mhq/73SzOk6mbNvyj9MPzQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+        }
+    </script>
+
+    <script src="./script.js"></script>
+    
+    <script src="//unpkg.com/alpinejs" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body class="dark bg-black">
+            
+    <section class="fixed flex items-center justify-between max-w-4xl p-4 mx-auto bg-white border border-gray-200 dark:bg-black left-12 bottom-16 dark:shadow-gray-900 shadow-gray-100 md:gap-x-4 dark:border-gray-700 rounded-2xl">
+        <p class="text-sm text-gray-600 dark:text-gray-300">Made with 💖 by <a href="https://github.com/thejimi" target="_blank">jimi</a></p>
+    </section>
+    
+            
+
+    <div class="centered">
+        <div style="border-radius:50px">
+        <div style="width:100%; text-align:center" class="overflow-hidden bg-white border divide-x rtl:flex-row-reverse dark:bg-gray-900 dark:border-gray-700 dark:divide-gray-700 text-center p-3">
+            <span class="text-lg text-white m-3">&nbsp;</span>
+        </div>
+        <div style="width:100%" class="flex overflow-hidden bg-white border divide-x rtl:flex-row-reverse dark:bg-gray-900 dark:border-gray-700 dark:divide-gray-700">
+            <span class="text-9xl text-white m-3">&nbsp;</span>
+        </div>
+    <div style="width:max-content" class="flex overflow-hidden bg-white border divide-x rtl:flex-row-reverse dark:bg-gray-900 dark:border-gray-700 dark:divide-gray-700">
+        <button class="px-4 py-2 text-8xl font-medium text-gray-600 transition-colors duration-200 sm:text-8xl sm:px-6 dark:hover:bg-gray-800 dark:text-gray-300 hover:bg-gray-100">
+            1
+        </button>
+    
+        <button class="px-4 py-2 text-8xl font-medium text-gray-600 transition-colors duration-200 sm:text-8xl sm:px-6 dark:hover:bg-gray-800 dark:text-gray-300 hover:bg-gray-100">
+            2
+        </button>
+    
+        <button class="px-4 py-2 text-8xl font-medium text-gray-600 transition-colors duration-200 sm:text-8xl sm:px-6 dark:hover:bg-gray-800 dark:text-gray-300 hover:bg-gray-100">
+            3
+        </button>
+    </div>
+    <div style="width:max-content" class="flex overflow-hidden bg-white border divide-x rtl:flex-row-reverse dark:bg-gray-900 dark:border-gray-700 dark:divide-gray-700">
+        <button class="px-4 py-2 text-8xl font-medium text-gray-600 transition-colors duration-200 sm:text-8xl sm:px-6 dark:hover:bg-gray-800 dark:text-gray-300 hover:bg-gray-100">
+            4
+        </button>
+    
+        <button class="px-4 py-2 text-8xl font-medium text-gray-600 transition-colors duration-200 sm:text-8xl sm:px-6 dark:hover:bg-gray-800 dark:text-gray-300 hover:bg-gray-100">
+            5
+        </button>
+    
+        <button class="px-4 py-2 text-8xl font-medium text-gray-600 transition-colors duration-200 sm:text-8xl sm:px-6 dark:hover:bg-gray-800 dark:text-gray-300 hover:bg-gray-100">
+            6
+        </button>
+    </div>
+    <div style="width:100%;" class="p-3 justify-center text-center flex overflow-hidden bg-white border  rtl:flex-row-reverse dark:bg-gray-900 dark:border-gray-700 dark:divide-gray-700">
+        <button style="border-radius:50px" class="px-4 py-2 text-lg font-medium text-gray-600 transition-colors duration-200 sm:px-6 dark:hover:bg-gray-800 dark:text-gray-300 hover:bg-gray-100" style="width:max-content">
+            <i class="fa-solid fa-clock-rotate-left"></i>
+        </button>
+    
+        <button style="border-radius:50px" class="px-4 py-2 text-lg font-medium text-gray-600 transition-colors duration-200 sm:px-6 dark:bg-gray-800 dark:text-gray-300 hover:bg-gray-100" style="width:max-content">
+            <i class="fa-solid fa-broom"></i>
+        </button>
+
+        <button style="border-radius:50px" class="px-4 py-2 text-lg font-medium text-gray-600 transition-colors duration-200 sm:px-6 dark:hover:bg-gray-800 dark:text-gray-300 hover:bg-gray-100" style="width:max-content">
+            <i class="fa-solid fa-rotate-left"></i>
+        </button>
+    </div>
+    </div>
+</div>
+</body>
+</html>
