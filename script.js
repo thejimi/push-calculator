@@ -1,5 +1,9 @@
 function on_websiteload(){
-	opacityDarker()
+	setTimeout(() => {
+		document.getElementById("loading").style.display = "none"
+		document.body.classList.add("bg-black")
+		document.getElementById("everything").style.display = "block"
+	}, 500)
 }
 
 function opacityFix(){
