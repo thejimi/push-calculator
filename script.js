@@ -6,4 +6,4 @@ function opacityDarker(){
 	document.getElementById("content").style.opacity = 0.4
 }
 
-alert("hey its me script.js")
+console.warn("script loaded")
