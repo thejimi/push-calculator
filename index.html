@@ -260,9 +260,9 @@
                 </div>
 
                 <div class="flex items-center justify-between w-full mt-5 gap-x-2">
-                    <input id="savedLinkInput" type="text" value="•••" class="flex-1 block h-10 px-4 text-sm text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-red-400 focus:ring-red-300 focus:ring-opacity-40 dark:focus:border-red-300 focus:outline-none focus:ring" />
+                    <input disabled id="savedLinkInput" type="text" value="•••" class="flex-1 block h-10 px-4 text-sm text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-red-400 focus:ring-red-300 focus:ring-opacity-40 dark:focus:border-red-300 focus:outline-none focus:ring" />
                     
-                    <button class="rounded-md hidden sm:block p-1.5 text-gray-700 bg-white border border-gray-200 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-red-400 focus:ring-red-300 focus:ring-opacity-40 dark:focus:border-red-300 focus:outline-none focus:ring transition-colors duration-300 hover:text-red-500 dark:hover:text-red-500">
+                    <button onclick="copySaveSessionLink()" class="rounded-md hidden sm:block p-1.5 text-gray-700 bg-white border border-gray-200 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-red-400 focus:ring-red-300 focus:ring-opacity-40 dark:focus:border-red-300 focus:outline-none focus:ring transition-colors duration-300 hover:text-red-500 dark:hover:text-red-500">
                         <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
                         </svg>
@@ -331,6 +331,19 @@
 </div>
 </body>
 <script>
+const queryString1 = window.location.search;
+    const urlParams1 = new URLSearchParams(queryString1);
+    if(urlParams1.get("savedProgressLink") === "TRUE"){
+        var xx1 = urlParams1.get("x1")
+        var xx2 = urlParams1.get("x2")
+        var xx3 = urlParams1.get("x3")
+        var xx4 = urlParams1.get("x4")
+        var xx5 = urlParams1.get("x5")
+        var xx6 = urlParams1.get("x6")
+        document.querySelector('meta[name="og:description"]').setAttribute("content", `Saved session:\n${xx1}x1 ${xx2}x2 ${xx3}x3 ${xx4}x4 ${xx5}x5 ${xx6}x6`);
+    }
+
+
 var x1 = 0
 var x2 = 0
 var x3 = 0
@@ -373,6 +386,12 @@ function opacityDarker(){
 
 function closeCredits(){
     document.getElementById("madeBy").innerHTML = ``
+}
+
+function copySaveSessionLink(){
+    var params = `&x1=${x1}&x2=${x2}&x3=${x3}&x4=${x4}&x5=${x5}&x6=${x6}`
+    var link = `https://thejimi.github.io/push-calculator?savedProgressLink=TRUE${params}`
+    navigator.clipboard.writeText(link);
 }
 
 function changeTheme(){
