@@ -260,7 +260,7 @@
             <span class="text-lg text-black m-3 dark:text-white" id="allCounter">•••</span>
         </div>
         <div style="width:100%" class="flex overflow-hidden bg-white border divide-x rtl:flex-row-reverse dark:bg-gray-900 dark:border-gray-700 dark:divide-gray-700">
-            <span class="text-9xl text-black dark:text-white m-3">0 <span id="addAsk" class="dark:text-gray-300 text-gray-900 text-3xl hidden">+ <span>1</span>x6</span></span>
+            <span class="text-9xl text-black dark:text-white m-3" id="mainCounter">0 <span id="addAsk" class="dark:text-gray-300 text-gray-900 text-3xl hidden">+ <span>1</span>x6</span></span>
         </div>
     <div style="width:100%" class="flex overflow-hidden bg-white border divide-x rtl:flex-row-reverse dark:bg-gray-900 dark:border-gray-700 dark:divide-gray-700">
         <button onclick="changeCardValue(this.id, 1); console.log(`${this.id} clicked`)" id="1" class="px-4 py-2 text-8xl font-medium text-gray-600 transition-colors duration-200 sm:text-8xl sm:px-6 dark:hover:bg-gray-800 dark:text-gray-300 hover:bg-gray-100 w-24">
@@ -411,6 +411,18 @@ function updateAllCounter(){
 
     var resetValue = `${colored(x1, x1Color)}x<strong>${colored("1", "blue-300")}</strong> ${colored(x2, x2Color)}x<strong>${colored("2", "blue-300")}</strong> ${colored(x3, x3Color)}x<strong>${colored("3", "blue-300")}</strong> ${colored(x4, x4Color)}x<strong>${colored("4", "blue-300")}</strong> ${colored(x5, x5Color)}x<strong>${colored("5", "blue-300")}</strong> ${colored(x6, x6Color)}x<strong>${colored("6", "blue-300")}</strong>`
     change("allCounter", resetValue)
+    updateMainCounter()
+}
+
+function updateMainCounter(){
+    var mathx1 = 1 * x1
+    var mathx2 = 2 * x2
+    var mathx3 = 3 * x3
+    var mathx4 = 4 * x4
+    var mathx5 = 5 * x5
+    var mathx6 = 6 * x6
+    var mathAll = mathx1+mathx2+mathx3+mathx4+mathx5+mathx6
+    change("mainCounter", mathAll.toString())
 }
 
 function changeCardValue(cardNumber, addValue){
@@ -451,6 +463,7 @@ function clearScores(){
 
 setTimeout(() => {
     updateAllCounter()
+    updateMainCounter()
 }, 1000)
 </script>
 </html>
