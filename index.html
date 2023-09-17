@@ -132,47 +132,17 @@
 </div>
 
 <div id="everything" class="hidden">
-<div x-data="{ isOpen: true }" class="relative flex justify-center">
-    <div x-show="isOpen" 
-        x-transition:enter="transition duration-300 ease-out"
-        x-transition:enter-start="translate-y-4 opacity-0 sm:translate-y-0 sm:scale-95"
-        x-transition:enter-end="translate-y-0 opacity-100 sm:scale-100"
-        x-transition:leave="transition duration-150 ease-in"
-        x-transition:leave-start="translate-y-0 opacity-100 sm:scale-100"
-        x-transition:leave-end="translate-y-4 opacity-0 sm:translate-y-0 sm:scale-95"
-        class="fixed inset-0 z-10 overflow-y-auto" 
-        aria-labelledby="modal-title" role="dialog" aria-modal="true"
-    >
-        <div class="flex items-end justify-center min-h-screen px-4 pt-4 pb-20 text-center sm:block sm:p-0">
-            <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
 
-            <div class="relative inline-block px-4 pt-5 pb-4 overflow-hidden text-left align-bottom transition-all transform bg-white rounded-lg shadow-xl rtl:text-right dark:bg-gray-900 sm:my-8 sm:align-middle sm:max-w-sm sm:w-full sm:p-6">
-                <div>
-                    <div class="flex items-center justify-center">
-                        
-                    </div>
+<div id="madeBy" style="position:absolute; z-index:50">
+    <section class="fixed flex items-center justify-between max-w-4xl p-4 mx-auto bg-white border border-gray-200 dark:bg-gray-900 left-12 bottom-16 dark:shadow-gray-900 shadow-gray-100 md:gap-x-4 dark:border-gray-700 rounded-2xl">
+    <p class="text-lg text-gray-600 dark:text-gray-300">This website was made with 💖 by <a href="https://github.com/thejimi" target="_blank">Jimi</a></p>
 
-                    <div class="mt-2 text-center">
-                        <h3 class="text-lg font-medium leading-6 text-gray-800 dark:text-white" id="modal-title">Made with 💖 by Jimi</h3>
-                    </div>
-                </div>
-
-                <div class="mt-5 sm:flex sm:items-center sm:justify-between">
-                    <a href="https://github.com/thejimi/push-calculator" target="_blank" class="text-sm text-blue-500 hover:underline">See the code</a>
-
-                    <div class="sm:flex sm:items-center ">
-                        <button @click="isOpen = false" onclick="opacityFix()" class="w-full px-4 py-2 mt-2 text-sm font-medium tracking-wide text-gray-700 capitalize transition-colors duration-300 transform border border-gray-200 rounded-md sm:mt-0 sm:w-auto sm:mx-2 dark:text-gray-200 dark:border-gray-700 dark:hover:bg-gray-800 hover:bg-gray-100 focus:outline-none focus:ring focus:ring-gray-300 focus:ring-opacity-40">
-                            Close
-                        </button>
-
-                        <button onclick="window.open('https://github.com/thejimi')" class="w-full px-4 py-2 mt-2 text-sm font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-blue-600 rounded-md sm:w-auto sm:mt-0 hover:bg-blue-500 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40">
-                            Visit my&nbsp;<i class="fa-brands fa-github"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    <button onclick="closeCredits()" class="flex items-center justify-center text-gray-700 transition-colors duration-300 rounded-full shrink-0 dark:text-gray-200 dark:hover:bg-gray-700 w-7 h-7 focus:outline-none hover:bg-gray-100">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
+            <path d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z" />
+        </svg>
+    </button>
+</section>
 </div>
 
 
@@ -196,13 +166,13 @@
                 </div> -->
 
                 <div class="mt-5 text-center">
-                    <h3 class="text-lg font-medium text-gray-800 dark:text-white" id="modal-title">
-                        title1
+                    <h3 class="text-5xl font-medium text-gray-800 dark:text-white mb-5" id="modal-title">
+                        Settings
                     </h3>
 
-                    <p class="mt-2 text-gray-500 dark:text-gray-400">
-                        description1
-                    </p>
+                    <button onclick="changeTheme()" class="px-6 py-2 font-medium tracking-wide text-white transition-colors duration-300 transform bg-black rounded-lg focus:outline-none">
+                       <i class="fa-solid fa-wand-magic-sparkles"></i>&nbsp;Change theme
+                    </button>
                 </div>
 
                 <!-- <div class="flex items-center justify-between w-full mt-5 gap-x-2">
@@ -217,11 +187,7 @@
 
                 <div class="mt-4 sm:flex sm:items-center sm:justify-between sm:mt-6 sm:-mx-2">
                     <button @click="isOpen = false" onclick="opacityFix()" class="px-4 sm:mx-2 w-full py-2.5 text-sm font-medium dark:text-gray-200 dark:border-gray-700 dark:hover:bg-gray-800 tracking-wide text-gray-700 capitalize transition-colors duration-300 transform border border-gray-200 rounded-md hover:bg-gray-100 focus:outline-none focus:ring focus:ring-gray-300 focus:ring-opacity-40">
-                        Cancel
-                    </button>
-
-                    <button class="px-4 sm:mx-2 w-full py-2.5 mt-3 sm:mt-0 text-sm font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-blue-600 rounded-md hover:bg-blue-500 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40">
-                        Confirm
+                        Close
                     </button>
                 </div>
             </div>
@@ -232,7 +198,7 @@
     <div class="centered" id="content">
         <div style="border-radius:50px">
         <div style="width:100%; text-align:center" class="overflow-hidden bg-white border divide-x rtl:flex-row-reverse dark:bg-gray-900 dark:border-gray-700 dark:divide-gray-700 text-center p-3">
-            <span class="text-lg text-white m-3">&nbsp;</span>
+            <span class="text-lg text-black m-3 dark:text-white" id="allCounter">•••</span>
         </div>
         <div style="width:100%" class="flex overflow-hidden bg-white border divide-x rtl:flex-row-reverse dark:bg-gray-900 dark:border-gray-700 dark:divide-gray-700">
             <span class="text-9xl text-black dark:text-white m-3">0<span class="dark:text-gray-300 text-gray-900 text-3xl">+ <span>1</span>x6</span></span>
@@ -282,8 +248,6 @@
 </body>
 <script>
 function on_websiteload(){
-    opacityDarker()
-
     setTimeout(() => {
         document.getElementById("loading").style.display = "none"
         document.body.classList.add("bg-black")
