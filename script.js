@@ -97,6 +97,35 @@ function updateAllCounter(){
 	change("allCounter", resetValue)
 }
 
+function changeCardValue(cardNumber, addValue){
+	var currentValue = localStorage.getItem(`x${cardNumber}`)||'0'
+	currentValue = Number(currentValue)
+	var newValue = currentValue + addValue
+	localStorage.setItem(`x${cardNumber}`, newValue.toString())
+
+	updateAllCounter()
+
+	return newValue
+}
+
+function clearScores(){
+	document.getElementById("clearScores_button").innerHTML = `•••`
+
+	localStorage.removeItem("x1")
+	localStorage.removeItem("x2")
+	localStorage.removeItem("x3")
+	localStorage.removeItem("x4")
+	localStorage.removeItem("x5")
+	localStorage.removeItem("x6")
+
+	setTimeout(() => {
+		document.getElementById("clearScores").setAttribute("x-data", '{isOpen:false}')
+		opacityFix()
+		document.getElementById("clearScores_button").innerHTML = `Yes, im sure`
+		updateAllCounter()
+	}, 1000)
+}
+
 setTimeout(() => {
 	updateAllCounter()
 }, 1000)
