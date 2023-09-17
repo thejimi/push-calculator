@@ -19,7 +19,12 @@ function changeTheme(){
 	} else {
 		document.body.classList.add("bg-black")
 		document.body.classList.add("dark")
+		document.body.classList.remove("bg-gray-200")
 	}
+}
+
+function counterAskToAdd(){
+
 }
 
 function showModal(id){
