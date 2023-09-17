@@ -136,7 +136,7 @@
 
 <div id="madeBy" style="position:absolute; z-index:50">
     <section class="fixed flex items-center justify-between max-w-4xl p-4 mx-auto bg-white border border-gray-200 dark:bg-gray-900 left-12 bottom-16 dark:shadow-gray-900 shadow-gray-100 md:gap-x-4 dark:border-gray-700 rounded-2xl">
-    <p class="text-lg text-gray-600 dark:text-gray-300">This website was made with 💖 by <a href="https://github.com/thejimi" target="_blank">Jimi</a></p>
+    <p class="text-lg text-gray-600 dark:text-gray-300">Made with 💖 by <strong><a href="https://github.com/thejimi" target="_blank">Jimi</a></strong></p>
 
     <button onclick="closeCredits()" class="flex items-center justify-center text-gray-700 transition-colors duration-300 rounded-full shrink-0 dark:text-gray-200 dark:hover:bg-gray-700 w-7 h-7 focus:outline-none hover:bg-gray-100">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
@@ -403,7 +403,7 @@ function updateAllCounter(){
         x6Color = "green-400"
     }
 
-    var resetValue = `${colored(x1, x1Color)}.${colored("1", "blue-300")} ${colored(x2, x2Color)}.${colored("2", "blue-300")} ${colored(x3, x3Color)}.${colored("3", "blue-300")} ${colored(x4, x4Color)}.${colored("4", "blue-300")} ${colored(x5, x5Color)}.${colored("5", "blue-300")} ${colored(x6, x6Color)}.${colored("6", "blue-300")}`
+    var resetValue = `${colored(x1, x1Color)}x${colored("1", "blue-300")} ${colored(x2, x2Color)}x${colored("2", "blue-300")} ${colored(x3, x3Color)}x${colored("3", "blue-300")} ${colored(x4, x4Color)}x${colored("4", "blue-300")} ${colored(x5, x5Color)}x${colored("5", "blue-300")} ${colored(x6, x6Color)}x${colored("6", "blue-300")}`
     change("allCounter", resetValue)
 }
 
