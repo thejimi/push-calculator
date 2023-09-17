@@ -256,28 +256,28 @@
             <span class="text-9xl text-black dark:text-white m-3">0 <span id="addAsk" class="dark:text-gray-300 text-gray-900 text-3xl hidden">+ <span>1</span>x6</span></span>
         </div>
     <div style="width:100%" class="flex overflow-hidden bg-white border divide-x rtl:flex-row-reverse dark:bg-gray-900 dark:border-gray-700 dark:divide-gray-700">
-        <button onclick="changeCardValue(this.id, 1)" id="1" class="px-4 py-2 text-8xl font-medium text-gray-600 transition-colors duration-200 sm:text-8xl sm:px-6 dark:hover:bg-gray-800 dark:text-gray-300 hover:bg-gray-100 w-24">
+        <button onclick="changeCardValue(this.id, 1); console.log(`${this.id} clicked`)" id="1" class="px-4 py-2 text-8xl font-medium text-gray-600 transition-colors duration-200 sm:text-8xl sm:px-6 dark:hover:bg-gray-800 dark:text-gray-300 hover:bg-gray-100 w-24">
             1
         </button>
     
-        <button onclick="changeCardValue(this.id, 1)" id="2" class="px-4 py-2 text-8xl font-medium text-gray-600 transition-colors duration-200 sm:text-8xl sm:px-6 dark:hover:bg-gray-800 dark:text-gray-300 hover:bg-gray-100 w-24">
+        <button onclick="changeCardValue(this.id, 1); console.log(`${this.id} clicked`)" id="2" class="px-4 py-2 text-8xl font-medium text-gray-600 transition-colors duration-200 sm:text-8xl sm:px-6 dark:hover:bg-gray-800 dark:text-gray-300 hover:bg-gray-100 w-24">
             2
         </button>
     
-        <button onclick="changeCardValue(this.id, 1)" id="3" class="px-4 py-2 text-8xl font-medium text-gray-600 transition-colors duration-200 sm:text-8xl sm:px-6 dark:hover:bg-gray-800 dark:text-gray-300 hover:bg-gray-100 w-24">
+        <button onclick="changeCardValue(this.id, 1); console.log(`${this.id} clicked`)" id="3" class="px-4 py-2 text-8xl font-medium text-gray-600 transition-colors duration-200 sm:text-8xl sm:px-6 dark:hover:bg-gray-800 dark:text-gray-300 hover:bg-gray-100 w-24">
             3
         </button>
     </div>
     <div style="width:max-content" class="flex overflow-hidden bg-white border divide-x rtl:flex-row-reverse dark:bg-gray-900 dark:border-gray-700 dark:divide-gray-700">
-        <button onclick="changeCardValue(this.id, 1)" id="4" class="px-4 py-2 text-8xl font-medium text-gray-600 transition-colors duration-200 sm:text-8xl sm:px-6 dark:hover:bg-gray-800 dark:text-gray-300 hover:bg-gray-100 w-24">
+        <button onclick="changeCardValue(this.id, 1); console.log(`${this.id} clicked`)" id="4" class="px-4 py-2 text-8xl font-medium text-gray-600 transition-colors duration-200 sm:text-8xl sm:px-6 dark:hover:bg-gray-800 dark:text-gray-300 hover:bg-gray-100 w-24">
             4
         </button>
     
-        <button onclick="changeCardValue(this.id, 1)" id="5" class="px-4 py-2 text-8xl font-medium text-gray-600 transition-colors duration-200 sm:text-8xl sm:px-6 dark:hover:bg-gray-800 dark:text-gray-300 hover:bg-gray-100 w-24">
+        <button onclick="changeCardValue(this.id, 1); console.log(`${this.id} clicked`)" id="5" class="px-4 py-2 text-8xl font-medium text-gray-600 transition-colors duration-200 sm:text-8xl sm:px-6 dark:hover:bg-gray-800 dark:text-gray-300 hover:bg-gray-100 w-24">
             5
         </button>
     
-        <butto onclick="changeCardValue(this.id, 1)" id="6" class="px-4 py-2 text-8xl font-medium text-gray-600 transition-colors duration-200 sm:text-8xl sm:px-6 dark:hover:bg-gray-800 dark:text-gray-300 hover:bg-gray-100 w-24">
+        <butto onclick="changeCardValue(this.id, 1); console.log(`${this.id} clicked`)" id="6" class="px-4 py-2 text-8xl font-medium text-gray-600 transition-colors duration-200 sm:text-8xl sm:px-6 dark:hover:bg-gray-800 dark:text-gray-300 hover:bg-gray-100 w-24" style="cursor:pointer">
             6
         </button>
     </div>
@@ -299,6 +299,13 @@
 </div>
 </body>
 <script>
+var x1 = 0
+var x2 = 0
+var x3 = 0
+var x4 = 0
+var x5 = 0
+var x6 = 0
+
 function on_websiteload(){
     setTimeout(() => {
         document.getElementById("loading").style.display = "none"
@@ -306,5 +313,137 @@ function on_websiteload(){
         document.getElementById("everything").style.display = "block"
     }, 500)
 }
+
+function opacityFix(){
+    document.getElementById("content").style.opacity = 1
+}
+
+function opacityDarker(){
+    document.getElementById("content").style.opacity = 0.4
+}
+
+function closeCredits(){
+    document.getElementById("madeBy").innerHTML = ``
+}
+
+function changeTheme(){
+    if(document.body.classList.contains("dark")){
+        document.body.classList.remove("dark")
+        document.body.classList.remove("bg-black")
+        document.body.classList.remove("bg-gray-900")
+        document.body.classList.add("bg-gray-200")
+    } else {
+        document.body.classList.add("bg-black")
+        document.body.classList.add("dark")
+        document.body.classList.remove("bg-gray-200")
+    }
+}
+
+function counterAskToAdd(){
+
+}
+
+function showModal(id){
+    var element = document.getElementById(id)
+    element.setAttribute("x-data", "{isOpen:true}")
+    opacityDarker()
+}
+
+function colored(text, color){
+    return `<span class="text-${color}">${text}</span>`
+}
+
+function change(objectId, value){
+    document.getElementById(objectId).innerHTML = value
+    return document.getElementById(objectId).innerHTML
+}
+
+function updateAllCounter(){
+    var x1Color = 'white'
+    var x2Color = 'white'
+    var x3Color = 'white'
+    var x4Color = 'white'
+    var x5Color = 'white'
+    var x6Color = 'white'
+
+    if(x1 === 0){
+        x1Color = "red-400"
+    } else {
+        x1Color = "green-400"
+    }
+    
+    if(x2 === 0){
+        x2Color = "red-400"
+    } else {
+        x2Color = "green-400"
+    }
+    
+    if(x3 === 0){
+        x3Color = "red-400"
+    } else {
+        x3Color = "green-400"
+    }
+    
+    if(x4 === 0){
+        x4Color = "red-400"
+    } else {
+        x4Color = "green-400"
+    }
+
+    if(x5 === 0){
+        x5Color = "red-400"
+    } else {
+        x5Color = "green-400"
+    }
+    
+    if(x6 === 0){
+        x6Color = "red-400"
+    } else {
+        x6Color = "green-400"
+    }
+
+    var resetValue = `${colored(x1, x1Color)}.${colored("1", "blue-300")} ${colored(x2, x2Color)}.${colored("2", "blue-300")} ${colored(x3, x3Color)}.${colored("3", "blue-300")} ${colored(x4, x4Color)}.${colored("4", "blue-300")} ${colored(x5, x5Color)}.${colored("5", "blue-300")} ${colored(x6, x6Color)}.${colored("6", "blue-300")}`
+    change("allCounter", resetValue)
+}
+
+function changeCardValue(cardNumber, addValue){
+    if(cardNumber === '1'){
+        x1 = x1 + addValue
+    } else if(cardNumber === '2'){
+        x2 = x2 + addValue
+    } else if(cardNumber === '3'){
+        x3 = x3 + addValue
+    } else if(cardNumber === '4'){
+        x4 = x4 + addValue
+    } else if(cardNumber === '5'){
+        x5 = x5 + addValue
+    } else if(cardNumber === '6'){
+        x6 = x6 + addValue
+    }
+
+    updateAllCounter()
+}
+
+function clearScores(){
+    document.getElementById("clearScores_button").innerHTML = `•••`
+
+    x1 = 0
+    x2 = 0
+    x3 = 0
+    x4 = 0
+    x5 = 0
+    x6 = 0
+
+    setTimeout(() => {
+        document.getElementById("clearScores").setAttribute("x-data", '{isOpen:false}')
+        opacityFix()
+        document.getElementById("clearScores_button").innerHTML = `Yes, im sure`
+        updateAllCounter()
+    }, 1000)
+}
+
+setTimeout(() => {
+    updateAllCounter()
+}, 1000)
 </script>
 </html>
